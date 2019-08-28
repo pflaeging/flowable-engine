@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    pflaeging.net/instance: flowablet2
+    pflaeging.net/vc: postgresql
+  name: flowablet2-pg-data
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+  selector:
+    matchLabels:
+      pflaeging.net/instance: flowablet2
+      pflaeging.net/volumetype: postgresql
+  volumeName: flowablet2-postgresql
+status: {}

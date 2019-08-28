@@ -1,0 +1,17 @@
+apiVersion: v1
+data:
+  SERVER_PORT: "8080"
+  SPRING_DATASOURCE_DRIVER-CLASS-NAME: org.postgresql.Driver
+  SPRING_DATASOURCE_URL: jdbc:postgresql://flowablet2-postgresql:5432/flowable
+  POSTGRESQL_USER: flowable
+  SPRING_DATASOURCE_USERNAME: flowable
+  POSTGRESQL_DATABASE: flowable
+  SPRING_DATASOURCE_PASSWORD: flowable
+  POSTGRESQL_PASSWORD: flowable
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    pflaeging.net/configmap: flowable
+    pflaeging.net/instance: flowabletest
+  name: flowablet2-flowable

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    pflaeging.net/instance: flowabletest
+    pflaeging.net/service: flowabletest-flowable-task
+  name: flowabletest-flowable-task
+spec:
+  ports:
+  - name: 8080-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    pflaeging.net/deployment: flowabletest-flowable-task
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

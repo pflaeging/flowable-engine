@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    pflaeging.net/instance: flowabletest
+    pflaeging.net/service: flowabletest-flowable-rest
+  name: flowabletest-flowable-rest
+spec:
+  host: flowabletest-rest.rohan.pfpk.pro
+  path: /
+  port:
+    targetPort: 8080-tcp
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  to:
+    kind: Service
+    name: flowabletest-flowable-rest
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress: null
